@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>支付记录后台</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { padding: 8px; border: 1px solid #ccc; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h2>支付记录后台</h2>
+    <table>
+        <thead>
+            <tr><th>用户ID</th><th>金额</th><th>币种</th><th>时间</th></tr>
+        </thead>
+        <tbody>
+        {% for user_id, amount, currency, timestamp in records %}
+            <tr>
+                <td>{{ user_id }}</td>
+                <td>{{ amount }}</td>
+                <td>{{ currency }}</td>
+                <td>{{ timestamp }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
